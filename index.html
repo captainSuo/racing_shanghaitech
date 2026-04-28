@@ -4,164 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShanghaiTech Racing | 画廊</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: linear-gradient(135deg, #c22 0%, #f00 100%);
-      font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
-      min-height: 100vh;
-      padding: 2rem 1.5rem;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(225,6,0,0.08) 0%, transparent 70%);
-      animation: rotateBg 20s linear infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    @keyframes rotateBg {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* 主容器 */
-    .container {
-      max-width: 90%;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 3rem;
-      animation: fadeInDown 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-
-    .logo {
-      max-width: 20rem;
-      width: 100%;
-      filter: drop-shadow(0 0 12px rgba(225,6,0,0.5));
-      transition: transform 0.3s ease;
-      margin-bottom: 1rem;
-    }
-
-    .logo:hover {
-      transform: scale(1.02) rotate(1deg);
-      filter: drop-shadow(0 0 20px #e10600);
-    }
-
-    .title {
-      font-size: 2.8rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #fff 30%, #f88 70%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      letter-spacing: -0.5px;
-      text-transform: uppercase;
-      animation: glowPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes glowPulse {
-      0%, 100% { text-shadow: 0 0 5px rgba(225,6,0,0.3); }
-      50% { text-shadow: 0 0 20px rgba(225,6,0,0.7); }
-    }
-
-    .gallery {
-      display: flex;
-      gap: 1.8rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .card {
-      background: rgba(20, 20, 20, 0.7);
-      backdrop-filter: blur(5px);
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(225, 6, 0, 0.3);
-      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      opacity: 0;
-      transform: translateY(30px);
-      animation: cardReveal 0.6s forwards;
-      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.5);
-      flex: 0 0 50rem;
-      max-width: 88%;
-    }
-
-    .card:nth-child(1) { animation-delay: 0.1s; }
-    .card:nth-child(2) { animation-delay: 0.2s; }
-    .card:nth-child(3) { animation-delay: 0.3s; }
-    .card:nth-child(4) { animation-delay: 0.4s; }
-
-    @keyframes cardReveal {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .card:hover {
-      transform: translateY(-12px) scale(1.02);
-      border-color: #e10600;
-      box-shadow: 0 20px 30px -8px rgba(225,6,0,0.4);
-    }
-
-    .card img {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-      background-color: aliceblue;
-    }
-
-    .card:hover img {
-      transform: scale(1.05);
-    }
-
-    /* 响应式 */
-    @media (max-width: 768px) {
-      body {
-        padding: 1.2rem;
-      }
-      .title {
-        font-size: 2rem;
-      }
-      .logo {
-        max-width: 130px;
-      }
-      .gallery {
-        gap: 1rem;
-      }
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
@@ -171,28 +14,28 @@
     </div>
     <div class="gallery">
       <div class="card">
-        <img src="src/assets/images/Car-1.png" alt="赛车">
+        <img src="src/assets/images/Car-1.png" alt="赛车", loading="lazy">
       </div>
       <div class="card">
-        <img src="src/assets/images/Car-2.png" alt="赛车">
+        <img src="src/assets/images/Car-2.png" alt="赛车", loading="lazy">
       </div>
       <div class="card">
-        <img src="src/assets/images/Car-3.png" alt="赛车">
+        <img src="src/assets/images/Car-3.png" alt="赛车", loading="lazy">
       </div>
       <div class="card">
-        <img src="src/assets/images/Car-4.png" alt="赛车">
+        <img src="src/assets/images/Car-4.png" alt="赛车", loading="lazy">
       </div>
       <div class="card">
-        <img src="src/assets/images/Race-1.jpg" alt="赛车">
+        <img src="src/assets/images/Race-1.jpg" alt="赛车", loading="lazy">
       </div>
       <div class="card">
-        <img src="src/assets/images/Race-2.jpg" alt="赛车">
+        <img src="src/assets/images/Race-2.jpg" alt="赛车", loading="lazy">
       </div>
       <div class="card">
-        <img src="src/assets/images/Race-3.jpg" alt="赛车">
+        <img src="src/assets/images/Race-3.jpg" alt="赛车", loading="lazy">
       </div>
       <div class="card">
-        <img src="src/assets/images/Race-4.jpg" alt="赛车">
+        <img src="src/assets/images/Race-4.jpg" alt="赛车", loading="lazy">
       </div>
     </div>
   </div>
