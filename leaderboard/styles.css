@@ -1,22 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #8b0000;
-  background: linear-gradient(145deg, #9d0a0a 0%, #6b0000 100%);
-  font-family: "Segoe UI", "Poppins", "Inter", system-ui, -apple-system,
-    "PingFang SC", "Microsoft YaHei", sans-serif;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.8rem;
-}
-
 .rank-card {
+  justify-self: center;
   max-width: 1200px;
   width: 100%;
   background: #0b0b0f;

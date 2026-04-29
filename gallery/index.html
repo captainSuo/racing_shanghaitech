@@ -1,43 +1,136 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShanghaiTech Racing | 画廊</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <img src="src/assets/images/Logo.png" alt="ShanghaiTech Racing" class="logo">
-      <h1 class="title">Racing Gallery</h1>
+<!--#include file="/components/header.html" -->
+<link rel="stylesheet" href="/styles.css"/>
+
+<div class="section">
+  <div class="section-header">
+    <div class="subtitle">Racing Gallery</div>
+    <h2>画廊</h2>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="/assets/images/Car-1.png" alt="赛车1" />
     </div>
-    <div class="gallery">
-      <div class="card">
-        <img src="src/assets/images/Car-1.png" alt="赛车", loading="lazy">
-      </div>
-      <div class="card">
-        <img src="src/assets/images/Car-2.png" alt="赛车", loading="lazy">
-      </div>
-      <div class="card">
-        <img src="src/assets/images/Car-3.png" alt="赛车", loading="lazy">
-      </div>
-      <div class="card">
-        <img src="src/assets/images/Car-4.png" alt="赛车", loading="lazy">
-      </div>
-      <div class="card">
-        <img src="src/assets/images/Race-1.jpg" alt="赛车", loading="lazy">
-      </div>
-      <div class="card">
-        <img src="src/assets/images/Race-2.jpg" alt="赛车", loading="lazy">
-      </div>
-      <div class="card">
-        <img src="src/assets/images/Race-3.jpg" alt="赛车", loading="lazy">
-      </div>
-      <div class="card">
-        <img src="src/assets/images/Race-4.jpg" alt="赛车", loading="lazy">
-      </div>
+    <div class="gallery-item">
+      <img src="/assets/images/Car-2.png" alt="赛车2" />
+    </div>
+    <div class="gallery-item">
+      <img src="/assets/images/Car-3.png" alt="赛车3" />
+    </div>
+    <div class="gallery-item">
+      <img src="/assets/images/Car-4.png" alt="赛车4" />
+    </div>
+    <div class="gallery-item">
+      <img src="/assets/images/Race-1.jpg" alt="比赛1" />
+    </div>
+    <div class="gallery-item">
+      <img src="/assets/images/Race-2.jpg" alt="比赛2" />
+    </div>
+    <div class="gallery-item">
+      <img src="/assets/images/Race-3.jpg" alt="比赛3" />
+    </div>
+    <div class="gallery-item">
+      <img src="/assets/images/Race-4.jpg" alt="比赛4" />
     </div>
   </div>
-</body>
-</html>
+</div>
+
+<style>
+  .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    animation: glowPulse 3s infinite;
+  }
+  @keyframes glowPulse {
+    0%,
+    100% {
+      text-shadow: 0 0 5px rgba(204, 0, 0, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(204, 0, 0, 0.7);
+    }
+  }
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 90%;
+    justify-self: center;
+  }
+  .gallery-item {
+    flex: 1 1 calc(25% - 15px);
+    min-width: 240px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s;
+    opacity: 0;
+    animation: cardReveal 0.5s forwards;
+  }
+  .gallery-item:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .gallery-item:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .gallery-item:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+  .gallery-item:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+  .gallery-item:nth-child(5) {
+    animation-delay: 0.25s;
+  }
+  .gallery-item:nth-child(6) {
+    animation-delay: 0.3s;
+  }
+  @keyframes cardReveal {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .gallery-item:hover {
+    transform: translateY(-2px);
+    border-color: #cc0000;
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.08),
+      0 0 25px rgba(204, 0, 0, 0.25);
+  }
+  .gallery-item img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    background: #1a1a1a;
+    transition: transform 0.4s;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+  @media (max-width: 1024px) {
+    .gallery-item {
+      flex: 1 1 calc(33.333% - 14px);
+    }
+  }
+  @media (max-width: 768px) {
+    .gallery-item {
+      flex: 1 1 calc(50% - 10px);
+    }
+    .title {
+      font-size: 1.6rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .gallery-item {
+      flex: 1 1 100%;
+    }
+  }
+</style>
+
+<!--#include file="/components/footer.html" -->

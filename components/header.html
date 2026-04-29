@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShanghaiTech Racing</title>
+    <style>
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    margin: 0;
+    font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.page-content {
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+}
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+:root {
+  --primary: #CC0000;
+  --primary-glow: rgba(204, 0, 0, 0.25);
+  --hover-glow: 0 8px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* ========== 导航栏 ========== */
+.navbar {
+  background-color: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #222;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  position: sticky;
+  top: 0;
+  margin: 0;
+  z-index: 100;
+  flex-shrink: 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  transition: all 0.3s;
+}
+.logo img {
+  height: 38px;
+}
+.nav-links { display: flex; gap: 36px; }
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 0;
+  border-bottom: 1px solid transparent;
+  background-color: transparent;
+  border-radius: 10px;
+  transition: all 0.3s;
+  align-self: center;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #222;
+  border-bottom-color: var(--primary);
+  background-color: #aaa;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: var(--hover-glow);
+}
+
+
+.footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 32px 5%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555555;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.section {
+  padding: 40px 5%;
+  margin: 0 0;
+}
+
+.section-header {
+  text-align: left;
+  margin-bottom: 48px;
+  border-left: 3px solid var(--primary);
+  padding-left: 18px;
+}
+
+.section-header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
+}
+
+.section-header .subtitle {
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+
+    </style>
+</head>
+
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        ShanghaiTech<span style="color:#CC0000;">Racing</span>
+    </div>
+    <div class="nav-links">
+        <a href="/">首页</a>
+        <a href="/leaderboard/">圈速挑战赛</a>
+        <a href="/gallery/">画廊</a>
+        <a href="/awards/">得奖记录</a>
+    </div>
+</nav>
+
+<script>
+(function() {
+    var path = location.pathname;
+    var current;
+    if (path === '/') {
+        current = '/';
+    } else {
+        var parts = path.split('/').filter(Boolean);
+        current = '/' + parts[0] + '/';
+    }
+    var links = document.querySelectorAll('.nav-links a');
+    for (var i = 0; i < links.length; i++) {
+        if (links[i].getAttribute('href') === current) {
+            links[i].classList.add('active');
+        }
+    }
+})();
+</script>
+
+<div class="page-content">
