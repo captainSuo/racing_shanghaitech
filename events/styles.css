@@ -1,0 +1,217 @@
+.rank-card {
+  justify-self: center;
+  max-width: 1200px;
+  width: 100%;
+  background: #0b0b0f;
+  border-radius: 2rem;
+  padding: 1.6rem 1.8rem 2rem 1.8rem;
+  box-shadow: 0 20px 100px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #c92a2a;
+}
+
+.title h1 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: white;
+  text-shadow: 0 2px 0 #5a0000;
+}
+
+.title p {
+  color: #ffb3b3;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.fastest-lap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0.4rem 1.2rem;
+}
+
+.fastest-lap .label {
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #ffbaba;
+  letter-spacing: 1px;
+  margin-right: 5%;
+}
+
+.fastest-lap .time {
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: monospace;
+  color: rgb(200, 0, 200);
+  line-height: 1.2;
+}
+
+.reward-row {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.reward-tag {
+  background: #16161c;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  border-left: 3px solid;
+}
+
+.reward-tag.gold {
+  border-left-color: gold;
+}
+
+.reward-tag.silver {
+  border-left-color: silver;
+}
+
+.reward-tag.bronze {
+  border-left-color: #cd7f32;
+}
+
+.reward-tag span {
+  font-weight: 800;
+  margin-right: 6px;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th {
+  text-align: center;
+  padding: 0.9rem 0.5rem 0.6rem 0.5rem;
+  color: white;
+  font-weight: bold;
+  border-bottom: 1px solid #2c2c3a;
+  letter-spacing: 0.5px;
+}
+
+td {
+  text-align: center;
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid #21212b;
+  color: #f0f0f0;
+  font-weight: 500;
+}
+
+.rank {
+  font-weight: 700;
+  color: #aaa;
+  width: 60px;
+}
+
+.driver {
+  font-weight: 600;
+}
+
+.date,
+.lap-time
+{
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.lap-time.fastest {
+  color: rgb(200, 0, 200);
+}
+
+.reward-badge {
+  font-size: 0.7rem;
+  background: #262433;
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 2rem;
+  font-weight: 600;
+}
+
+.reward-badge.gold {
+  background-color: rgb(194, 165, 0);
+}
+
+.reward-badge.silver {
+  background-color: rgb(148, 148, 148);
+}
+
+.reward-badge.bronze {
+  background-color: #cd7f32;
+}
+
+.rank.gold {
+  color: rgb(194, 165, 0);
+}
+
+.rank.silver {
+  color: rgb(148, 148, 148);
+}
+
+.rank.bronze {
+  color: #cd7f32;
+}
+.reward-badge.gold {
+  background-color: rgb(194, 165, 0);
+}
+
+.reward-badge.silver {
+  background-color: rgb(148, 148, 148);
+}
+
+.reward-badge.bronze {
+  background-color: #cd7f32;
+}
+
+.footer-note {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #a87c7c;
+  border-top: 1px solid #2a1f1f;
+  padding-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .rank-card {
+    padding: 1.2rem;
+  }
+
+  .date,
+  .lap-time{
+    font-size: 0.6rem;
+  }
+
+  th,
+  td {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.3rem;
+  }
+
+  .fastest-lap .label, .fastest-lap .time {
+    font-size: 1rem;
+  }
+}

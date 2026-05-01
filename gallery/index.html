@@ -9,30 +9,44 @@
 
   <div class="gallery">
     <div class="gallery-item">
-      <img src="/assets/images/Car-1.png" alt="赛车1" />
+      <img src="/assets/images/Car-1.png" alt="赛车1" onclick="openLightbox(this.src)" />
     </div>
     <div class="gallery-item">
-      <img src="/assets/images/Car-2.png" alt="赛车2" />
+      <img src="/assets/images/Car-2.png" alt="赛车2" onclick="openLightbox(this.src)" />
     </div>
     <div class="gallery-item">
-      <img src="/assets/images/Car-3.png" alt="赛车3" />
+      <img src="/assets/images/Car-3.png" alt="赛车3" onclick="openLightbox(this.src)" />
     </div>
     <div class="gallery-item">
-      <img src="/assets/images/Car-4.png" alt="赛车4" />
+      <img src="/assets/images/Car-4.png" alt="赛车4" onclick="openLightbox(this.src)" />
     </div>
     <div class="gallery-item">
-      <img src="/assets/images/Race-1.jpg" alt="比赛1" />
+      <img src="/assets/images/Race-1.jpg" alt="比赛1" onclick="openLightbox(this.src)" />
     </div>
     <div class="gallery-item">
-      <img src="/assets/images/Race-2.jpg" alt="比赛2" />
+      <img src="/assets/images/Race-2.jpg" alt="比赛2" onclick="openLightbox(this.src)" />
     </div>
     <div class="gallery-item">
-      <img src="/assets/images/Race-3.jpg" alt="比赛3" />
+      <img src="/assets/images/Race-3.jpg" alt="比赛3" onclick="openLightbox(this.src)" />
     </div>
     <div class="gallery-item">
-      <img src="/assets/images/Race-4.jpg" alt="比赛4" />
+      <img src="/assets/images/Race-4.jpg" alt="比赛4" onclick="openLightbox(this.src)" />
+    </div>
+    <div class="gallery-item">
+      <img src="/assets/images/Award-1.jpg" alt="奖杯1" onclick="openLightbox(this.src)" />
+    </div>
+    <div class="gallery-item">
+      <img src="/assets/images/Award-2.jpg" alt="奖杯2" onclick="openLightbox(this.src)" />
+    </div>
+    <div class="gallery-item">
+      <img src="/assets/images/Podium-1.jpg" alt="领奖台1" onclick="openLightbox(this.src)" />
     </div>
   </div>
+</div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="放大图片" />
 </div>
 
 <style>
@@ -69,34 +83,14 @@
     opacity: 0;
     animation: cardReveal 0.5s forwards;
   }
-  .gallery-item:nth-child(1) {
-    animation-delay: 0.05s;
-  }
-  .gallery-item:nth-child(2) {
-    animation-delay: 0.1s;
-  }
-  .gallery-item:nth-child(3) {
-    animation-delay: 0.15s;
-  }
-  .gallery-item:nth-child(4) {
-    animation-delay: 0.2s;
-  }
-  .gallery-item:nth-child(5) {
-    animation-delay: 0.25s;
-  }
-  .gallery-item:nth-child(6) {
-    animation-delay: 0.3s;
-  }
-  @keyframes cardReveal {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  .gallery-item:nth-child(1) { animation-delay: 0.05s; }
+  .gallery-item:nth-child(2) { animation-delay: 0.1s; }
+  .gallery-item:nth-child(3) { animation-delay: 0.15s; }
+  .gallery-item:nth-child(4) { animation-delay: 0.2s; }
+  .gallery-item:nth-child(5) { animation-delay: 0.25s; }
+  .gallery-item:nth-child(6) { animation-delay: 0.3s; }
+  .gallery-item:nth-child(7) { animation-delay: 0.35s; }
+  .gallery-item:nth-child(8) { animation-delay: 0.4s; }
   .gallery-item:hover {
     transform: translateY(-2px);
     border-color: #cc0000;
@@ -109,10 +103,48 @@
     object-fit: cover;
     background: #1a1a1a;
     transition: transform 0.4s;
+    cursor: pointer;
   }
   .gallery-item:hover img {
     transform: scale(1.05);
   }
+  
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  .lightbox.active {
+    display: flex;
+  }
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1001;
+  }
+  .lightbox-close:hover {
+    color: #cc0000;
+  }
+
   @media (max-width: 1024px) {
     .gallery-item {
       flex: 1 1 calc(33.333% - 14px);
@@ -132,5 +164,15 @@
     }
   }
 </style>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+</script>
 
 <!--#include file="/components/footer.html" -->

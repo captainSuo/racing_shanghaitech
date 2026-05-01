@@ -1,0 +1,240 @@
+<!--#include file="/components/header.html" -->
+
+<div class="section">
+  <div class="section-header">
+    <div class="subtitle">Events</div>
+    <h1>活动</h1>
+  </div>
+</div>
+
+<style>
+  body {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+  }
+
+  .race-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  .race-item {
+    background: #121212;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid #2a2a2a;
+    width: 100%;
+    max-width: 50rem;
+    padding: 0;
+    animation: cardReveal 0.5s forwards;
+  }
+
+  .race-item:hover {
+    box-shadow: 0 8px 30px rgba(230, 57, 70, 0.25);
+    border-color: #e63946;
+  }
+
+  .race-item a {
+    padding: 1.2rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .race-item .race-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f0f0f0;
+    margin: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .race-item a:hover .race-title {
+    color: #e63946;
+  }
+
+  .race-divider {
+    width: 1px;
+    height: 2rem;
+    background: #2a2a2a;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  .race-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: left;
+    flex: 1;
+  }
+
+  .race-event {
+    font-size: 0.95rem;
+    color: #aaaaaa;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .race-date-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+    margin-left: auto;
+    align-self: center;
+  }
+
+  .race-date {
+    font-size: 1.2rem;
+    color: #666;
+  }
+
+  .race-status {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+  }
+
+  .race-status .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .race-status.live .dot {
+    background: #2ecc71;
+    box-shadow: 0 0 6px rgba(46, 204, 113, 0.6);
+    animation: pulse 2s infinite;
+  }
+
+  .race-status.live {
+    color: #2ecc71;
+  }
+
+  .race-status.ended .dot {
+    background: #666;
+  }
+
+  .race-status.ended {
+    color: #666;
+  }
+
+  .race-status.upcoming .dot {
+    background: #e63946;
+  }
+
+  .race-status.upcoming {
+    color: #e63946;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .race-date {
+    font-size: 1.2rem;
+    color: #666;
+    flex-shrink: 0;
+    margin-left: auto;
+    align-self: center;
+    padding-top: 0.15rem;
+  }
+
+  @media (max-width: 768px) {
+    .race-item {
+      max-width: 100%;
+    }
+
+    .race-item a {
+      padding: 1rem;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .race-divider {
+      width: 100%;
+      height: 0;
+    }
+
+    .race-item .race-title {
+      font-size: 1.1rem;
+      width: 60px;
+    }
+
+    .race-event {
+      font-size: 0.75rem;
+      letter-spacing: 0.3px;
+    }
+
+    .race-date {
+      font-size: 0.85rem;
+    }
+
+    .race-status {
+      font-size: 0.7rem;
+    }
+    .race-status .dot {
+      width: 5px;
+      height: 5px;
+    }
+    
+  }
+</style>
+
+<div class="race-container">
+  <div class="race-item">
+    <a href="hotlap1/">
+      <span class="race-title">第一届 模拟赛车圈速挑战赛</span>
+      <span class="race-divider"></span>
+      <span class="race-text">
+        <span class="race-event">Lync & Co 03 WTCR | Monza</span>
+      </span>
+      <span class="race-date-wrapper">
+        <span class="race-date">2025.12</span>
+        <span class="race-status ended">
+          <span class="dot"></span>
+          已结束
+        </span>
+      </span>
+    </a>
+  </div>
+  <div class="race-item">
+    <a href="hotlap2/">
+      <span class="race-title">第二届 模拟赛车圈速挑战赛</span>
+      <span class="race-divider"></span>
+      <span class="race-text">
+        <span class="race-event">FiA Formula 4 | Shanghai Tianma</span>
+      </span>
+      <span class="race-date-wrapper">
+        <span class="race-date">2026.5</span>
+        <span class="race-status upcoming">
+          <span class="dot"></span>
+          未开始
+        </span>
+      </span>
+    </a>
+  </div>
+</div>
+
+<!--#include file="/components/footer.html" -->
